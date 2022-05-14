@@ -1,0 +1,35 @@
+/* .product-holder {
+  position: relative;
+  max-width: 200px;
+}
+
+.plus-image {
+  position: absolute;
+  top: 30vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 100px;
+  background-image: url("http://i.stack.imgur.com/2OrtT.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.product-image {
+  overflow: hidden;
+  object-fit: cover;
+  width: 50px;
+  height: 100px;
+}
+
+.relative {
+  position: "relative";
+  display: block;
+  min-height: 1000px !important;
+}
+
+.img_home {
+  min-height: 1000px !important;
+}
+ */

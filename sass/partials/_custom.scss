@@ -1,0 +1,62 @@
+//nav etc
+$dark: #0c0c0c;
+
+//background
+$primary: #100f0f;
+$secondary: #000;
+$success: #8e531f;
+
+$navbar-dark-color: rgb(255, 255, 255);
+$navbar-dark-active-color: rgb(255, 255, 255);
+
+.footer_style {
+  height: 200px;
+  background-color: $secondary;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+//////////////////////// fix footer bottom working????
+html,
+body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
+#main {
+  overflow: auto;
+  padding-bottom: 150px; /* this needs to be bigger than footer height*/
+}
+
+.footer {
+  position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  height: 150px;
+  clear: both;
+  padding-top: 20px;
+}
+
+/////////////////////// Home
+
+body {
+  padding-top: 60px;
+}
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
+}
+
+///////////nav margin
