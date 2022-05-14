@@ -29,13 +29,13 @@ export default function Index({ users }) {
             src={Background}
             alt="home photo"
           />
-          <a href="/speakerBrand">
+          <Link href="/speakerBrand">
             <Buttons
               className="centered_home_button btn btn-success btn-lg"
               content="Høyttaler"
               color="white"
             ></Buttons>
-          </a>
+          </Link>
           <Heading
             className="centered_home_text"
             content="PINNACLE OF MUSICALITY"
