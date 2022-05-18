@@ -3,3 +3,24 @@
   width: auto;
   top: 50%;
 }
+
+@media (max-width: 1200px) {
+  .max_width_logo {
+    max-width: 500px;
+    height: auto;
+  }
+}
+
+@media (max-width: 960px) {
+  .max_width_logo {
+    max-width: 400px;
+    height: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .max_width_logo {
+    max-width: 250px;
+    height: auto;
+  }
+}

@@ -4,11 +4,17 @@ import Link from "next/link";
 import logo from "../../..//public/images/icons/logo.png";
 import Image_comp from "../img/Image_comp";
 
-export default function nav() {
+export default function nav(props) {
+  const navBarBg = props.hideNavBarBg ? "" : " bg-dark";
   return (
-    <Nav className="navbar navbar-expand-lg fixed-top navbar-dark nav_margin shadow bg-dark">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+    <Nav
+      className={
+        "navbar navbar-expand-lg fixed-top navbar-dark nav_margin" + navBarBg
+      }
+      id={props.id}
+    >
+      <div className="container-fluid" id={props.id}>
+        <a className="navbar-brand" href="/">
           <Image_comp
             className="sound_logo"
             height={35}
@@ -45,6 +51,13 @@ export default function nav() {
               <Link href="/speakerBrand">
                 <a className="nav-link active  " aria-current="page" href="#">
                   Høyttaler
+                </a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link href="/contactus">
+                <a className="nav-link active  " aria-current="page" href="#">
+                  Kontakt
                 </a>
               </Link>
             </li>

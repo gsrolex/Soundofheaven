@@ -2,12 +2,15 @@ import Head from "next/head";
 import Layout from "../public/components/layout/Layout";
 import Heading from "../public/components/Heading";
 import axios from "axios";
-import Background from "../public/images/backgoundPhotos/homeScreenBad.png";
+import Background from "../public/images/backgoundPhotos/homeScreen.jpg";
 import miniatu from "../public/images/Franco Serblin/accordo/miniaturizzare.png";
 import Image_comp from "../public/components/img/Image_comp";
 import Footer from "../public/components/layout/Footer";
 import Buttons from "../public/components/Button";
 import Link from "next/link";
+import styles from "../styles/Home.module.scss";
+
+/* import styles from "./Home.module.scss"; */
 
 /* import { BASE_URL } from "../api/api"; */
 
@@ -16,28 +19,33 @@ export default function Index({ users }) {
 
   return (
     <div className="bg-dark">
-      <Layout>
+      <Layout hideNavBarBg="true">
         <Head title="Results" />
         <Heading className="" content="Home" color="black" />
       </Layout>
 
-      <div className="container-fluid padding p-0" id="main">
+      <div className={`container-fluid padding p-0 ${styles.margintop}`}>
         <div className="container_fluid container_home_text p-0 ">
-          <Image_comp
-            className="FrontPageImg"
-            layout="raw"
-            src={Background}
-            alt="home photo"
-          />
+          <div>
+            <Image_comp
+              className="FrontPageImg "
+              layout="raw"
+              src={Background}
+              alt="home photo"
+            />
+          </div>
           <Link href="/speakerBrand">
-            <Buttons
-              className="centered_home_button btn btn-success btn-lg"
-              content="Høyttaler"
-              color="white"
-            ></Buttons>
+            <a>
+              <Buttons
+                className="centered_home_button btn btn-success btn-lg button-83 shadow"
+                content="PRODUKTER"
+                color="white"
+              ></Buttons>
+            </a>
           </Link>
           <Heading
-            className="centered_home_text"
+            className="centered_home_text font_x"
+            id="font_x"
             content="PINNACLE OF MUSICALITY"
             color="white"
           />

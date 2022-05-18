@@ -16,6 +16,8 @@ import ktema from "../public/images/Franco Serblin/ktema/ktema.png";
 import ktema_logo from "../public/images/Franco Serblin/ktema/ktema_logo_white.png";
 import lignea from "../public/images/Franco Serblin/lignea/lignea.png";
 import lignea_logo from "../public/images/Franco Serblin/lignea/lignea_logo_white.png";
+import Logo from "../public/images/Franco Serblin/logo.png";
+import Link from "next/link";
 
 /* import { BASE_URL } from "../api/api"; */
 
@@ -30,35 +32,38 @@ export default function Index({ users }) {
       </Layout>
 
       <Container fluid className="justify-content-center bg-dark p-5">
-        {/* Stack the columns on mobile by making one full-width and the other half-width */}
         <Row className="justify-content-center ">
-          {/*      <Model_comp
-            className_one="model_width"
-            layout_one="responsive"
-            src_one={accordo_essence}
-            alt_one="home photo"
-            className_two="centered_text franco_logo model_width"
-            layout_two="raw"
-            src_two={accordo_essence_logo}
-            alt_two="home photo"
-          ></Model_comp> */}
-          <Col className="text_container p-5" md={12} lg={4}>
+          <Col className="text_container p-5" md={12}>
+            <Link href="/product_page">
+              <Image_comp
+                className="max_width_logo"
+                layout="raw"
+                src={Logo}
+                alt="home photo"
+              />
+            </Link>
+          </Col>
+          <Col className="text_container p-5" md={12} xl={4}>
+            <Link href="/product_page">
+              <Image_comp
+                className="model_width"
+                layout="responsive"
+                src={accordo}
+                alt="home photo"
+              />
+            </Link>
+            <Link href="/product_page">
+              <Image_comp
+                className="centered_text franco_logo model_width"
+                layout="raw"
+                src={accordo_logo}
+                alt="home photo"
+              />
+            </Link>
+          </Col>
+          <Col className="text_container p-5" md={12} xl={4}>
             <Image_comp
               className="model_width"
-              layout="responsive"
-              src={accordo}
-              alt="home photo"
-            />
-            <Image_comp
-              className="centered_text franco_logo model_width"
-              layout="raw"
-              src={accordo_logo}
-              alt="home photo"
-            />
-          </Col>
-          <Col className="text_container p-5" md={12} lg={4}>
-            <Image_comp
-              className=""
               layout="responsive"
               src={accordo_essence}
               alt="home photo"
@@ -74,7 +79,7 @@ export default function Index({ users }) {
 
         {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
         <Row className="justify-content-center ">
-          <Col className="text_container p-5" md={12} lg={4}>
+          <Col className="text_container p-5" md={12} xl={4}>
             <Image_comp
               className="model_width"
               layout="responsive"
@@ -88,7 +93,7 @@ export default function Index({ users }) {
               alt="home photo"
             />
           </Col>
-          <Col className="text_container p-5" md={12} lg={4}>
+          <Col className="text_container p-5" md={12} xl={4}>
             <Image_comp
               className="model_width"
               layout="responsive"

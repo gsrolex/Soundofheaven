@@ -1,3 +1,14 @@
-/* .home_second_box {
+#opacity {
+  background: none;
+  box-shadow: none;
 }
- */
+
+.margintop {
+  margin-top: -60px;
+}
+#shadow_none {
+  box-shadow: 0px 0rem 0.0000025rem rgb(0 0 0 / 0%);
+}
+#bg-dark {
+  background-color: $dark;
+}
