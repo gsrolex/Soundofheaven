@@ -1,13 +1,49 @@
-.model_width {
-  height: 40%;
-  width: auto;
-  top: 50%;
+.container_model {
+  position: relative;
+  width: 500px;
+  height: 700px;
+  margin: 40px;
+}
+.product_heading {
+  z-index: 50;
 }
 
-@media (max-width: 1200px) {
+.font_model {
+  font-family: "EB Garamond", serif;
+  font-size: 50px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  background-color: black;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.child_model {
+  object-fit: contain;
+}
+@media (max-width: 1850px) {
+  .font_model {
+    font-size: 35px;
+    top: 30%;
+  }
+}
+
+@media (max-width: 1400px) {
   .max_width_logo {
     max-width: 500px;
     height: auto;
+  }
+
+  .container_model {
+    width: 600px;
+    height: 700px;
+    margin: 20px;
+  }
+  .font_model {
+    font-size: 30px;
   }
 }
 
@@ -16,11 +52,39 @@
     max-width: 400px;
     height: auto;
   }
+
+  .container_model {
+    width: 400px;
+    height: 500px;
+    margin: 50px;
+  }
 }
 
 @media (max-width: 576px) {
   .max_width_logo {
     max-width: 250px;
     height: auto;
+  }
+  .container_model {
+    width: auto;
+    height: 350px;
+    margin-bottom: 50px;
+  }
+  .font_model {
+    font-size: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .max_width_logo {
+    max-width: 250px;
+    height: auto;
+  }
+  .container_model {
+    width: auto;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+  .font_model {
+    font-size: 20px;
   }
 }

@@ -1,30 +1,28 @@
 import Head from "next/head";
-import Layout from "../public/components/layout/Layout";
-import Heading from "../public/components/Heading";
+import Layout from "../components/layout/Layout";
+import Heading from "../components/Heading";
 import axios from "axios";
 import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import Footer from "../public/components/layout/Footer";
-import Image_comp from "../public/components/img/Image_comp";
+import Footer from "../components/layout/Footer";
+import Image_comp from "../components/img/Image_comp";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import TabContainer from "react-bootstrap/TabContainer";
 import TabContent from "react-bootstrap/TabContent";
 import TabPane from "react-bootstrap/TabPane";
 import Drammen from "../public/images/contactus/drammen.png";
-import Text from "../public/components/Text";
-import Buttons from "../public/components/Button";
+import Text from "../components/Text";
+import Buttons from "../components/Button";
 import InputGroup from "react-bootstrap/InputGroup";
 import { FormControl } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-import FormContact from "../public/components/Form";
+import FormContact from "../components/Form";
 
 /* import { BASE_URL } from "../api/api"; */
 
-export default function Index({ users }) {
-  console.log(users);
-
+export default function Index(brands) {
   return (
     <>
       <Layout>
@@ -78,26 +76,4 @@ export default function Index({ users }) {
       <Footer></Footer>
     </>
   );
-}
-
-export async function getStaticProps() {
-  let users = [];
-
-  try {
-    const response = await axios.get(BASE_URL);
-
-    console.log("response", response.data);
-
-    users = response.data;
-  } catch (error) {
-    console.log(error);
-  }
-
-  console.log("users", users);
-
-  return {
-    props: {
-      users: users,
-    },
-  };
 }

@@ -7,7 +7,7 @@
 .FrontPageImg {
   width: 100%;
   height: auto;
-  min-height: 850px;
+  min-height: 960px;
   object-fit: cover;
 }
 
@@ -36,53 +36,49 @@
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
-@media (max-width: 960px) {
-  .container_home_text {
-    position: relative;
-    text-align: center;
-    color: white;
-  }
+@media (max-width: 1200px) {
   .font_x {
-    font-size: 50px;
+    font-size: 60px;
   }
 
   .centered_home_text {
-    position: absolute;
     top: 35vh;
     left: 50%;
-    transform: translate(-50%, -50%);
   }
 
   .centered_home_button {
-    position: absolute;
     top: 77vh;
     left: 50%;
-    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 960px) {
+  .font_x {
+    font-size: 45px;
+  }
+
+  .centered_home_text {
+    top: 35vh;
+    left: 50%;
+    width: 75%;
+  }
+
+  .centered_home_button {
+    top: 77vh;
+    left: 50%;
   }
 }
 
 @media (max-width: 576px) {
-  .container_home_text {
-    position: relative;
-    text-align: center;
-    color: white;
-  }
-  .font_x {
-    font-size: 50px;
-  }
-
   .centered_home_text {
-    position: absolute;
     top: 30vh;
     left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 35px;
+    font-size: 32px;
+    width: 70%;
   }
 
   .centered_home_button {
-    position: absolute;
     top: 75vh;
     left: 50%;
-    transform: translate(-50%, -50%);
   }
 }

@@ -1,19 +1,24 @@
 import React from "react";
-import { Nav, Button } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import Link from "next/link";
-import logo from "../../..//public/images/icons/logo.png";
+import logo from "../../public/images/icons/logo.png";
 import Image_comp from "../img/Image_comp";
+import useWindowDimensions from "../../js/nav";
+import { BASE_URL_CAT } from "../../api/api";
 
-export default function nav(props) {
-  const navBarBg = props.hideNavBarBg ? "" : " bg-dark";
+export default function nav({ id, hideNavBarBg, brands }) {
+  const { width } = useWindowDimensions();
+  console.log("here", brands);
+  const navBarBg =
+    !hideNavBarBg || (width > 0 && width <= 960) ? " bg-dark" : "";
   return (
     <Nav
       className={
-        "navbar navbar-expand-lg fixed-top navbar-dark nav_margin" + navBarBg
+        "navbar navbar-expand-lg fixed-top navbar-dark nav_margin this" +
+        navBarBg
       }
-      id={props.id}
     >
-      <div className="container-fluid" id={props.id}>
+      <div className="container-fluid" id={id}>
         <a className="navbar-brand" href="/">
           <Image_comp
             className="sound_logo"
@@ -35,34 +40,18 @@ export default function nav(props) {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
         <div
           className="collapse navbar-collapse justify-content-end"
           id="navbarSupportedContent"
         >
-          <ul className="navbar-nav  mb-2 mb-lg-0">
+          <ul className="navbar-nav   mb-2 mb-lg-0">
             <li className="nav-item">
               <Link href="/">
                 <a className="nav-link active  " aria-current="page" href="#">
-                  Home
+                  Hjem
                 </a>
               </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/speakerBrand">
-                <a className="nav-link active  " aria-current="page" href="#">
-                  Høyttaler
-                </a>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/contactus">
-                <a className="nav-link active  " aria-current="page" href="#">
-                  Kontakt
-                </a>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#"></a>
             </li>
             <li className="nav-item dropdown">
               <a
@@ -73,26 +62,42 @@ export default function nav(props) {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown
+                Produkter
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Action
-                  </a>
+                {brands.map((brand) => {
+                  return (
+                    <Link href={`/brands/${String(brand.id)}`}>
+                      <li key={brand.id}>{brand.name}</li>
+                    </Link>
+                  );
+                })}
+                {/*           <li>
+                  <Link href="/speakerBrand">
+                    <a className="dropdown-item" href="#">
+                      Forsterker
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
+                  <Link href="/speakerBrand">
+                    <a className="dropdown-item" href="#">
+                      Kabler
+                    </a>
+                  </Link>
+                </li> */}
               </ul>
+            </li>
+
+            <li className="nav-item">
+              <Link href="/contactus">
+                <a className="nav-link active  " aria-current="page" href="#">
+                  Kontakt
+                </a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#"></a>
             </li>
           </ul>
           <form className="d-flex">

@@ -1,14 +1,14 @@
 import Head from "next/head";
-import Layout from "../public/components/layout/Layout";
-import Heading from "../public/components/Heading";
+import Layout from "../components/layout/Layout";
+import Heading from "../components/Heading";
 import axios from "axios";
-import Image_comp from "../public/components/img/Image_comp";
+import Image_comp from "../components/img/Image_comp";
 import Franco_logo from "../public/images/Franco Serblin/logo.png";
 import Xavian from "../public/images/Xavian/eshop-terza-header.png";
 import Accordo from "../public/images/Franco Serblin/accordo/accordo_parallax.png";
 import Atohm from "../public/images/Atohm/atohm.png";
 import Atohm_logo from "../public/images/Atohm/logo.png";
-import Footer from "../public/components/layout/Footer";
+import Footer from "../components/layout/Footer";
 import Link from "next/link";
 
 /* import { BASE_URL } from "../api/api"; */

@@ -9,5 +9,47 @@
 
 .nav-tabs .nav-item .nav-link.active {
   color: #ffffff;
-  background-color: #555555;
+  background-color: $success;
+  border: none;
+}
+.nav-link:hover {
+  border: none;
+}
+
+.product_tab {
+  border-radius: 0px 0px 10px 10px;
+}
+
+.product_img_container {
+  position: relative;
+  width: auto;
+  height: 700px;
+  margin-right: 20px;
+}
+
+.product_img_container_two {
+  position: relative;
+  height: 200px;
+  width: auto;
+}
+
+@media (max-width: 960px) {
+  .product_img_container {
+    margin: 20px;
+  }
+  .not_phone {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .product_img_container {
+    height: 500px;
+    margin-right: 20px;
+  }
+  .font_size_produkt_spes {
+    font-size: 18px;
+  }
+}
+@media (max-width: 400px) {
 }

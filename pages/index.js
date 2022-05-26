@@ -1,25 +1,25 @@
 import Head from "next/head";
-import Layout from "../public/components/layout/Layout";
-import Heading from "../public/components/Heading";
+import Layout from "../components/layout/Layout";
+import Heading from "../components/Heading";
 import axios from "axios";
 import Background from "../public/images/backgoundPhotos/homeScreen.jpg";
 import miniatu from "../public/images/Franco Serblin/accordo/miniaturizzare.png";
-import Image_comp from "../public/components/img/Image_comp";
-import Footer from "../public/components/layout/Footer";
-import Buttons from "../public/components/Button";
+import Image_comp from "..//components/img/Image_comp";
+import Footer from "../components/layout/Footer";
+import Buttons from "../components/Button";
 import Link from "next/link";
 import styles from "../styles/Home.module.scss";
+import { BASE_URL_CAT } from "../api/api";
+import { getNavigationStaticProps } from "../js/navigationStaticProps";
 
 /* import styles from "./Home.module.scss"; */
 
 /* import { BASE_URL } from "../api/api"; */
 
-export default function Index({ users }) {
-  console.log(users);
-
+export default function Index({ brands }) {
   return (
     <div className="bg-dark">
-      <Layout hideNavBarBg="true">
+      <Layout hideNavBarBg="true" brands={brands}>
         <Head title="Results" />
         <Heading className="" content="Home" color="black" />
       </Layout>
@@ -67,23 +67,10 @@ export default function Index({ users }) {
 }
 
 export async function getStaticProps() {
-  let users = [];
-
-  try {
-    const response = await axios.get(BASE_URL);
-
-    console.log("response", response.data);
-
-    users = response.data;
-  } catch (error) {
-    console.log(error);
-  }
-
-  console.log("users", users);
-
   return {
     props: {
-      users: users,
+      ...(await getNavigationStaticProps()),
+      test: "hey",
     },
   };
 }

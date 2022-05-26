@@ -1,21 +1,22 @@
 import Head from "next/head";
-import Layout from "../public/components/layout/Layout";
-import Heading from "../public/components/Heading";
+import Layout from "../components/layout/Layout";
+import Heading from "../components/Heading";
 import axios from "axios";
 import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import Footer from "../public/components/layout/Footer";
-import Image_comp from "../public/components/img/Image_comp";
+import Footer from "../components/layout/Footer";
+import Image_comp from "../components/img/Image_comp";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import TabContainer from "react-bootstrap/TabContainer";
 import TabContent from "react-bootstrap/TabContent";
 import TabPane from "react-bootstrap/TabPane";
 import accordo from "../public/images/Franco Serblin/accordo/accordo.png";
-import Text from "../public/components/Text";
-import Buttons from "../public/components/Button";
+import Text from "../components/Text";
+import Buttons from "../components/Button";
 import styles from "../styles/Nav.module.scss";
+import { BASE_URL } from "../api/api";
 
 /* import { BASE_URL } from "../api/api"; */
 
@@ -70,15 +71,22 @@ export default function Index({ users }) {
 
         {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
         <Row className="justify-content-center ">
-          <Col className="text_container p-5 " md={12} lg={8}>
+          <Col className="text_container  " md={12} lg={8}>
             <Tabs
               defaultActiveKey="home"
               transition={false}
               id="noanim-tab-example"
-              className="mb-3 "
+              className=" "
             >
-              <Tab eventKey="home" title="PRODUKTBESKRIVELSE">
-                <Heading content="PRODUKTBESKRIVELSE"></Heading>
+              <Tab
+                className="bg-danger"
+                eventKey="home"
+                title="PRODUKTBESKRIVELSE"
+              >
+                <Heading
+                  className="pt-2"
+                  content="PRODUKTBESKRIVELSE"
+                ></Heading>
                 <Text
                   content="Mauris quis nulla malesuada libero semper faucibus. Proin blandit tempor sodales. Integer mauris eros, congue ut est in, lacinia interdum orci. Nam lacinia neque 
                 quis pellentesque tincidunt. Nulla eu lectus id diam scelerisque cursus. Quisque id enim risus. 
@@ -87,8 +95,12 @@ export default function Index({ users }) {
                 Proin aliquet, sapien non pellentesque finibus, diam nisi hendrerit nibh, accumsan fermentum massa nibh a"
                 ></Text>
               </Tab>
-              <Tab eventKey="profile" title="SPESIFIKASJONER">
-                <Heading content="SPESIFIKASJONER"></Heading>
+              <Tab
+                className="bg-danger"
+                eventKey="profile"
+                title="SPESIFIKASJONER"
+              >
+                <Heading className="pt-2" content="SPESIFIKASJONER"></Heading>
                 <Text
                   content="Mauris quis nulla malesuada libero semper faucibus. Proin blandit tempor sodales. Integer mauris eros, congue ut est in, lacinia interdum orci. Nam lacinia neque 
                 quis pellentesque tincidunt. Nulla eu lectus id diam scelerisque cursus. Quisque id enim risus. 
@@ -105,26 +117,4 @@ export default function Index({ users }) {
       <Footer></Footer>
     </>
   );
-}
-
-export async function getStaticProps() {
-  let users = [];
-
-  try {
-    const response = await axios.get(BASE_URL);
-
-    console.log("response", response.data);
-
-    users = response.data;
-  } catch (error) {
-    console.log(error);
-  }
-
-  console.log("users", users);
-
-  return {
-    props: {
-      users: users,
-    },
-  };
 }
