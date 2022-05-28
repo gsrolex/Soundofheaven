@@ -7,21 +7,9 @@ import { Container } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import Footer from "../components/layout/Footer";
 import Image_comp from "../components/img/Image_comp";
-import Tabs from "react-bootstrap/Tabs";
-import Tab from "react-bootstrap/Tab";
-import TabContainer from "react-bootstrap/TabContainer";
-import TabContent from "react-bootstrap/TabContent";
-import TabPane from "react-bootstrap/TabPane";
 import Drammen from "../public/images/contactus/drammen.png";
 import Text from "../components/Text";
-import Buttons from "../components/Button";
-import InputGroup from "react-bootstrap/InputGroup";
-import { FormControl } from "react-bootstrap";
-import Form from "react-bootstrap/Form";
 import FormContact from "../components/Form";
-
-/* import { BASE_URL } from "../api/api"; */
-
 export default function Index(brands) {
   return (
     <>

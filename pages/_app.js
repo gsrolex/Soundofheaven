@@ -1,5 +1,4 @@
 import Head from "next/head";
-/* import "bootstrap/dist/css/bootstrap.css"; */
 import "../styles/globals.css";
 import "../css/style.css";
 import Script from "next/script";

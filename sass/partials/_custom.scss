@@ -7,6 +7,7 @@ $secondary: #0a0a0a;
 $success: #8e531f;
 $light: rgb(255, 255, 255);
 $danger: rgb(32, 32, 32);
+$info: rgb(23, 216, 6);
 
 $navbar-dark-color: rgb(255, 255, 255);
 $navbar-dark-active-color: rgb(255, 255, 255);
@@ -62,3 +63,15 @@ body {
 }
 
 ///////////nav margin
+
+.nav_dropdown_text {
+  color: $light;
+}
+
+#nav_dropdown_texts {
+  padding: 0px;
+}
+
+.dropdown-item > li:hover {
+  color: $dark;
+}

@@ -3,13 +3,14 @@
 }
 
 .nav-tabs .nav-item .nav-link {
-  background-color: #3f3f3f;
+  background-color: $primary;
   color: #fff;
 }
 
 .nav-tabs .nav-item .nav-link.active {
   color: #ffffff;
-  background-color: $success;
+
+  background-color: $danger;
   border: none;
 }
 .nav-link:hover {
@@ -33,6 +34,10 @@
   width: auto;
 }
 
+.minus_margin_top {
+  margin-top: -1px;
+}
+
 @media (max-width: 960px) {
   .product_img_container {
     margin: 20px;
@@ -52,4 +57,22 @@
   }
 }
 @media (max-width: 400px) {
+  .nav-tabs .nav-item .nav-link {
+    font-size: 14px;
+  }
+}
+@media (max-width: 360px) {
+  .nav-tabs .nav-item .nav-link {
+    font-size: 12px;
+  }
+}
+
+//////tbody tr
+
+.text-container table tbody tr {
+  padding: 10px;
+}
+
+#please table tbody tr {
+  padding: 20px;
 }

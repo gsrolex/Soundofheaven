@@ -33,26 +33,9 @@ export default function UserDetail({ product, brands, subcategory }) {
       </Layout>
       {subcategory.map((product) => {
         return (
-          <Container fluid className=" bg-dark product_page ">
+          <Container key={product.id} fluid className=" bg-dark product_page ">
             <Row className="justify-content-center ">
-              <Col
-                className="text_container   d-flex align-items-start"
-                md={10}
-                lg={8}
-              >
-                <button
-                  className="not_phone"
-                  type="button"
-                  onClick={() => router.back()}
-                >
-                  Click here to go back
-                </button>
-              </Col>
-              <Col
-                className="text_container p-5  d-flex align-items-start"
-                md={10}
-                lg={8}
-              >
+              <Col className="text_container p-5 " md={10} lg={8}>
                 <Heading
                   className=""
                   content={product.name}
@@ -71,7 +54,6 @@ export default function UserDetail({ product, brands, subcategory }) {
                   ></Image_comp> */}
                   <View subcategory={subcategory}></View>
                 </Col>
-                <Col className="" md={3} lg={3}></Col>
               </Row>
             </Row>
             <Row className="justify-content-center ">
@@ -93,12 +75,12 @@ export default function UserDetail({ product, brands, subcategory }) {
 
             {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
             <Row className="justify-content-center ">
-              <Col className="text_container  " md={12} lg={8}>
+              <Col className="text_container border-0 " md={12} lg={8}>
                 <Tabs
                   defaultActiveKey="home"
                   transition={false}
                   id="noanim-tab-example"
-                  className=" "
+                  className="border-0 "
                 >
                   <Tab
                     className="bg-danger text-light pb-2 product_tab"
@@ -106,11 +88,12 @@ export default function UserDetail({ product, brands, subcategory }) {
                     title="PRODUKTBESKRIVELSE"
                   >
                     <Heading
-                      className="pt-2 "
+                      className="pt-3 minus_margin_top"
                       content="PRODUKTBESKRIVELSE"
                     ></Heading>
 
                     <div
+                      id="please"
                       className="text-container"
                       dangerouslySetInnerHTML={{ __html: product.description }}
                     />
@@ -121,10 +104,11 @@ export default function UserDetail({ product, brands, subcategory }) {
                     title="SPESIFIKASJONER"
                   >
                     <Heading
-                      className="pt-2 "
+                      className="pt-3 minus_margin_top"
                       content="SPESIFIKASJONER"
                     ></Heading>
                     <div
+                      id="please"
                       className="text-container"
                       dangerouslySetInnerHTML={{
                         __html: product.short_description,

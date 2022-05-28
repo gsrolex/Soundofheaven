@@ -2,7 +2,6 @@ import Head from "next/head";
 import Layout from "../../components/layout/Layout";
 import Heading from "../../components/Heading";
 import axios from "axios";
-/* import Model_comp from "../public/components/Model_comp.Js"; */
 import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Col } from "react-bootstrap";
@@ -14,11 +13,10 @@ import { BASE_URL } from "../../api/api";
 import { BASE_URL_CAT } from "../../api/api";
 import { getNavigationStaticProps } from "../../js/navigationStaticProps";
 
-export default function Index({ subcategory, products, brands }) {
-  console.log("here idiot", subcategory);
+export default function Index(props) {
   return (
     <>
-      <Layout brands={brands}>
+      <Layout brands={props.brands}>
         <Head title="Results" />
         <Heading className="" content="Home" color="black" />
       </Layout>
@@ -39,7 +37,7 @@ export default function Index({ subcategory, products, brands }) {
 
         <Row className="justify-content-center m-5  ">
           {" "}
-          {subcategory.map((product) => {
+          {props.subcategory.map((product) => {
             return (
               <Col
                 key={product.id}
@@ -54,14 +52,18 @@ export default function Index({ subcategory, products, brands }) {
                 ></Heading>
                 <Link href={`/produkter/${String(product.id)}`}>
                   <a>
-                    <Image_comp
-                      className="child_model "
-                      layout="fill"
-                      sizes="50vw"
-                      src={product.images[0].src}
-                      placeholder="blurDataURL"
-                      alt="home photo"
-                    />
+                    {product.images.length > 0 && product.images[0].src ? (
+                      <Image_comp
+                        className="child_model "
+                        layout="fill"
+                        sizes="50vw"
+                        src={product.images[0].src}
+                        placeholder="blurDataURL"
+                        alt="home photo"
+                      />
+                    ) : (
+                      <span>{product.name}</span>
+                    )}
                   </a>
                 </Link>
               </Col>
@@ -101,8 +103,6 @@ export async function getStaticProps({ params }) {
   try {
     const response = await axios.get(BASE_URL);
 
-    console.log("response", response.data);
-
     responseData = response.data;
   } catch (error) {
     console.log(error);
@@ -112,13 +112,10 @@ export async function getStaticProps({ params }) {
     (sub) => sub.categories[0].id === parseInt(params.id)
   );
 
-  console.log("products", responseData);
-
   return {
     props: {
       ...(await getNavigationStaticProps()),
       subcategory,
-      products: responseData,
     },
   };
 }

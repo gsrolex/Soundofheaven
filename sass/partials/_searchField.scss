@@ -1,0 +1,36 @@
+.Search_Container {
+  max-width: 186px;
+  padding-top: 2px;
+}
+
+#search_box > ul > li:hover {
+  background-color: $dark;
+}
+
+.search_box ul li {
+  background-color: rgb(255, 255, 255);
+}
+
+.search_top {
+  margin-top: 1px;
+}
+
+#textbox_id {
+  margin-top: 4px;
+  padding-bottom: px;
+}
+#remove_decoration a {
+  text-decoration: none;
+}
+
+@media (max-width: 960px) {
+  .Search_Container {
+    max-width: 40vh;
+    padding-top: 3px;
+  }
+}
+
+@media (max-width: 576px) {
+}
+@media (max-width: 400px) {
+}

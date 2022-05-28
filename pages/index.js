@@ -1,15 +1,11 @@
 import Head from "next/head";
 import Layout from "../components/layout/Layout";
 import Heading from "../components/Heading";
-import axios from "axios";
 import Background from "../public/images/backgoundPhotos/homeScreen.jpg";
 import miniatu from "../public/images/Franco Serblin/accordo/miniaturizzare.png";
 import Image_comp from "..//components/img/Image_comp";
 import Footer from "../components/layout/Footer";
-import Buttons from "../components/Button";
-import Link from "next/link";
 import styles from "../styles/Home.module.scss";
-import { BASE_URL_CAT } from "../api/api";
 import { getNavigationStaticProps } from "../js/navigationStaticProps";
 
 /* import styles from "./Home.module.scss"; */
@@ -34,15 +30,7 @@ export default function Index({ brands }) {
               alt="home photo"
             />
           </div>
-          <Link href="/speakerBrand">
-            <a>
-              <Buttons
-                className="centered_home_button btn btn-success btn-lg button-83 shadow"
-                content="PRODUKTER"
-                color="white"
-              ></Buttons>
-            </a>
-          </Link>
+
           <Heading
             className="centered_home_text font_x"
             id="font_x"

@@ -7,6 +7,7 @@ module.exports = {
       layoutRaw: true,
     },
   },
+
   images: {
     domains: [
       "https://www.soundofheaven.nodesign.no",
