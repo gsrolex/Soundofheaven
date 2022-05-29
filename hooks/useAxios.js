@@ -1,6 +1,6 @@
 import axios from "axios";
 import { BASE_URL } from "../api/login";
-import { userService } from "../serv/service";
+import { brukerData } from "../serv/worker";
 
 const url = BASE_URL;
 
@@ -9,7 +9,7 @@ export default function useAxios() {
     baseURL: url,
   });
 
-  const user = userService.userValue;
+  const user = brukerData.userValue;
 
   apiClient.interceptors.request.use(function (config) {
     const token = user.token;

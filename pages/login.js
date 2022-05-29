@@ -6,8 +6,12 @@ export default function LoginPage() {
   return (
     <>
       <Layout />
-      <div className="container, cont_button">
-        <Heading className="homeHeading" content="Home" color="black" />
+      <div className="container, cont_button  ">
+        <Heading
+          className="homeHeading text-center p-5 "
+          content="To Admin Page"
+          color="black"
+        />
       </div>
       <LoginForm />
     </>

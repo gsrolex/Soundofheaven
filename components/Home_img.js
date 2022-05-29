@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import home from "../../images/backgoundPhotos/homeScreen.png";
 import Image_comp from "../components/img/Image_comp";

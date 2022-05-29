@@ -2,12 +2,10 @@ import Head from "next/head";
 import Layout from "../../components/layout/Layout";
 import Heading from "../../components/Heading";
 import axios from "axios";
-import { Row } from "react-bootstrap";
-import { Container } from "react-bootstrap";
-import { Col } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import Footer from "../../components/layout/Footer";
 import Image_comp from "../../components/img/Image_comp";
-import Logo from "../../public/images/Franco Serblin/logo.png";
+
 import Link from "next/link";
 import { BASE_URL } from "../../api/api";
 import { BASE_URL_CAT } from "../../api/api";
@@ -24,30 +22,22 @@ export default function Index(props) {
       <Container fluid className="justify-content-center bg-dark pt-5 pb-5">
         <Row className="justify-content-center ">
           <Col className="text_container p-5" md={12}>
-            <Link href="/product_page">
-              <Image_comp
-                className="max_width_logo"
-                layout="raw"
-                src={Logo}
-                alt="home photo"
-              />
-            </Link>
+            <Heading className="p-2"></Heading>
           </Col>
         </Row>
 
         <Row className="justify-content-center m-5  ">
-          {" "}
           {props.subcategory.map((product) => {
             return (
               <Col
                 key={product.id}
-                className="p-5 container_model 
+                className="p-5 container_model hover_effect_h1
                 "
                 md={12}
                 xxl={5}
               >
                 <Heading
-                  className=" font_model product_heading text-light"
+                  className=" font_model product_heading text-light sparkle "
                   content={product.name}
                 ></Heading>
                 <Link href={`/produkter/${String(product.id)}`}>
@@ -70,8 +60,6 @@ export default function Index(props) {
             );
           })}
         </Row>
-
-        {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
       </Container>
 
       <Footer></Footer>
@@ -109,7 +97,8 @@ export async function getStaticProps({ params }) {
   }
 
   const subcategory = responseData.filter(
-    (sub) => sub.categories[0].id === parseInt(params.id)
+    (sub) =>
+      sub.categories.length > 0 && sub.categories[0].id === parseInt(params.id)
   );
 
   return {

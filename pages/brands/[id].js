@@ -7,13 +7,12 @@ import Footer from "../../components/layout/Footer";
 import Link from "next/link";
 import { BASE_URL_CAT } from "../../api/api";
 import { getNavigationStaticProps } from "../../js/navigationStaticProps";
-import { Col } from "react-bootstrap";
-import { Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
-export default function Index(props) {
+export default function Index({ brands, subcategory }) {
   return (
     <div className="bg-dark">
-      <Layout brands={props.brands}>
+      <Layout brands={brands}>
         <Head title="Results" />
         <Heading className="" content="Home" color="black" />
       </Layout>
@@ -21,10 +20,10 @@ export default function Index(props) {
         <div className="container SpeakerBrand_container ">
           <Row className="justify-content-center ">
             <Col className="text_container pb-5">
-              <Heading className="" content="lol"></Heading>
+              <Heading className="p-3" content=""></Heading>
             </Col>
           </Row>
-          {props.subcategory.map((sub) => {
+          {subcategory.map((sub) => {
             return (
               <>
                 <Link href={`/model/${String(sub.id)}`}>

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
 function View({ subcategory }) {
   useEffect(() => {

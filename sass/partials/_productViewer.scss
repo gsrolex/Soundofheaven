@@ -19,6 +19,8 @@ img {
   min-width: 100%;
 }
 .img-select {
+  margin-left: -4px;
+  padding-left: 0px;
   display: flex;
 }
 .image_product_slide {
@@ -28,7 +30,8 @@ img {
 
 .img-item {
   margin: 0.3rem;
-  min-width: 100px;
+  max-width: 115px;
+  min-width: 70px;
 }
 .img-item:nth-child(1),
 .img-item:nth-child(2),

@@ -7,16 +7,14 @@ import Image_comp from "..//components/img/Image_comp";
 import Footer from "../components/layout/Footer";
 import styles from "../styles/Home.module.scss";
 import { getNavigationStaticProps } from "../js/navigationStaticProps";
-
-/* import styles from "./Home.module.scss"; */
-
-/* import { BASE_URL } from "../api/api"; */
+import Buttons from "../components/Button";
+import Link from "next/link";
 
 export default function Index({ brands }) {
   return (
     <div className="bg-dark">
       <Layout hideNavBarBg="true" brands={brands}>
-        <Head title="Results" />
+        <Head title="HomePage" />
         <Heading className="" content="Home" color="black" />
       </Layout>
 
@@ -37,6 +35,14 @@ export default function Index({ brands }) {
             content="PINNACLE OF MUSICALITY"
             color="white"
           />
+          <Link href={"/contactus"}>
+            <a>
+              <Buttons
+                className="centered_home_button btn btn-primary mt-3 hover_front"
+                content="Kontakt oss!"
+              ></Buttons>
+            </a>
+          </Link>
         </div>
       </div>
       <div className="container-fluid bg-dark home_second_box d-flex justify-content-center">
@@ -58,7 +64,6 @@ export async function getStaticProps() {
   return {
     props: {
       ...(await getNavigationStaticProps()),
-      test: "hey",
     },
   };
 }

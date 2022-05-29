@@ -9,7 +9,7 @@ const userSubject = new BehaviorSubject(
   process.browser && JSON.parse(localStorage.getItem("user"))
 );
 
-export const userService = {
+export const brukerData = {
   user: userSubject.asObservable(),
   get userValue() {
     return userSubject.value;
@@ -25,8 +25,6 @@ function login(username, password) {
     .then((user) => {
       userSubject.next(user);
       localStorage.setItem("user", JSON.stringify(user));
-
-      console.log("TOKEN", user);
       return user;
     });
 }

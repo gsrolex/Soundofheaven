@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import Link from "next/link";
 import logo from "../../public/images/icons/logo.png";
 import Image_comp from "../img/Image_comp";
@@ -9,8 +9,6 @@ import { Col, Row } from "react-bootstrap";
 
 export default function Layout({ id, hideNavBarBg, brands }) {
   const { width } = useWindowDimensions();
-
-  console.log("here", brands);
 
   const navBarBg =
     !hideNavBarBg || (width > 0 && width <= 960) ? " bg-dark" : "";
@@ -27,7 +25,6 @@ export default function Layout({ id, hideNavBarBg, brands }) {
     setQuery(query);
     if (query.length) {
       axios.get(SEARCH_URL + query).then((res) => {
-        console.log(res.data);
         setResults(res.data);
       });
     } else {

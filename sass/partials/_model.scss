@@ -12,13 +12,15 @@
   font-family: "EB Garamond", serif;
   font-size: 50px;
   position: absolute;
-  top: 20%;
+  top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
   white-space: nowrap;
-  background-color: black;
   padding: 10px;
   border-radius: 10px;
+}
+.hover_effect_h1 h1:hover {
+  scale: 2;
 }
 
 .child_model {
@@ -27,7 +29,7 @@
 @media (max-width: 1850px) {
   .font_model {
     font-size: 35px;
-    top: 30%;
+    top: 70%;
   }
 }
 
@@ -72,6 +74,7 @@
   }
   .font_model {
     font-size: 20px;
+    top: 70%;
   }
 }
 @media (max-width: 400px) {

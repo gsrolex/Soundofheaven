@@ -1,33 +1,22 @@
-import Img_comp from "../../components/img/Image_comp";
 import Head from "next/head";
 import Layout from "../../components/layout/Layout";
 import Heading from "../../components/Heading";
 import axios from "axios";
-import { Row } from "react-bootstrap";
-import { Container } from "react-bootstrap";
-import { Col } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import Footer from "../../components/layout/Footer";
-import Image_comp from "../../components/img/Image_comp";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
-import TabContainer from "react-bootstrap/TabContainer";
-import TabContent from "react-bootstrap/TabContent";
-import TabPane from "react-bootstrap/TabPane";
 import Text from "../../components/Text";
 import Buttons from "../../components/Button";
-import styles from "../../styles/Nav.module.scss";
 import { BASE_URL } from "../../api/api";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import { getNavigationStaticProps } from "../../js/navigationStaticProps";
 import View from "../../components/productView";
-/* import { BASE_URL } from "../api/api"; */
 
-export default function UserDetail({ product, brands, subcategory }) {
-  const router = useRouter();
+export default function UserDetail({ brands, subcategory }) {
   return (
     <>
-      <Layout brands={brands} id={styles.nav_dark}>
+      <Layout brands={brands}>
         <Head title="Results" />
         <Heading className="" content="Home" color="black" />
       </Layout>
@@ -45,13 +34,6 @@ export default function UserDetail({ product, brands, subcategory }) {
 
               <Row className="justify-content-center d-flex alig-items-center">
                 <Col className="   " md={7} lg={5}>
-                  {/*       <Image_comp
-                    className="child_model product_picture "
-                    priority
-                    layout="fill"
-                    src={product.images[0].src}
-                    alt="logo"
-                  ></Image_comp> */}
                   <View subcategory={subcategory}></View>
                 </Col>
               </Row>
@@ -59,7 +41,7 @@ export default function UserDetail({ product, brands, subcategory }) {
             <Row className="justify-content-center ">
               <Col className="text_container p-5 " md={5} lg={4}>
                 {" "}
-                <Text content={product.prices.price}></Text>
+                <Text content={`Pris ${product.prices.price},-`}></Text>
               </Col>
               <Col className="text_container p-5 " md={5} lg={4}>
                 {" "}
@@ -73,9 +55,12 @@ export default function UserDetail({ product, brands, subcategory }) {
               </Col>
             </Row>
 
-            {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
             <Row className="justify-content-center ">
-              <Col className="text_container border-0 " md={12} lg={8}>
+              <Col
+                className="text_container border-0 product_spec"
+                md={12}
+                lg={8}
+              >
                 <Tabs
                   defaultActiveKey="home"
                   transition={false}
@@ -109,7 +94,7 @@ export default function UserDetail({ product, brands, subcategory }) {
                     ></Heading>
                     <div
                       id="please"
-                      className="text-container"
+                      className="text-container "
                       dangerouslySetInnerHTML={{
                         __html: product.short_description,
                       }}
@@ -129,9 +114,6 @@ export default function UserDetail({ product, brands, subcategory }) {
 export async function getStaticPaths() {
   try {
     const response = await axios.get(BASE_URL);
-
-    console.log(response.data);
-
     const product = response.data;
 
     const paths = product.map((product) => ({
@@ -150,8 +132,6 @@ export async function getStaticProps({ params }) {
   try {
     const response = await axios.get(BASE_URL);
 
-    console.log("response", response.data);
-
     responseData = response.data;
   } catch (error) {
     console.log(error);
@@ -165,7 +145,6 @@ export async function getStaticProps({ params }) {
     props: {
       ...(await getNavigationStaticProps()),
       subcategory,
-      product: responseData,
     },
   };
 }

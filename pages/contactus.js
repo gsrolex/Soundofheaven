@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Layout from "../components/layout/Layout";
 import Heading from "../components/Heading";
-import axios from "axios";
 import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Col } from "react-bootstrap";
@@ -10,11 +9,12 @@ import Image_comp from "../components/img/Image_comp";
 import Drammen from "../public/images/contactus/drammen.png";
 import Text from "../components/Text";
 import FormContact from "../components/Form";
-export default function Index(brands) {
+
+export default function Index() {
   return (
     <>
       <Layout>
-        <Head title="Results" />
+        <Head title="ContactUs" />
         <Heading className="" content="Home" color="black" />
       </Layout>
 

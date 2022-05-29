@@ -4,15 +4,14 @@ import Heading from "../components/Heading";
 import axios from "axios";
 import Footer from "../components/layout/Footer";
 import { BASE_URL_EMAIL } from "../api/apiEmail";
-import { Col } from "react-bootstrap";
-import { Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import BackPage from "../components/GoBackOnePage";
 
-export default function fakeAdmin({ subcategory, brands, history }) {
+export default function fakeAdmin({ brands, history }) {
   return (
     <div className="bg-dark">
       <Layout brands={brands}>
-        <Head title="Results" />
+        <Head title="EmailResults" />
         <Heading className="" content="Home" color="black" />
       </Layout>
       <div className="container min-vh-100 ">
@@ -31,7 +30,7 @@ export default function fakeAdmin({ subcategory, brands, history }) {
                   const lastName = str.lastName || null;
                   const message = str.message || null;
                   const phoneNumber = str.phoneNumber || null;
-                  /*  const email = str.email || null; */ /////////// SAM PLEASE /////////////// kan ikke finne email
+                  const emaill = str.email || null;
 
                   if (!firstName || !lastName || !message) {
                     return null;
@@ -48,6 +47,10 @@ export default function fakeAdmin({ subcategory, brands, history }) {
                         <hr />
                         <p className="card-text email_bold">
                           Tlf:&nbsp;{phoneNumber}
+                        </p>
+                        <hr />
+                        <p className="card-text email_bold">
+                          Email:&nbsp;{emaill}
                         </p>
                         <hr />
                         <p className="card-text">{message}</p>

@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import Heading from "./Heading";
 
-import { userService } from "../serv/service";
+import { brukerData } from "../serv/worker";
 
 export default function Login() {
   const router = useRouter();
@@ -19,7 +19,7 @@ export default function Login() {
   const { errors } = formState;
 
   function onSubmit({ username, password }) {
-    return userService
+    return brukerData
       .login(username, password)
       .then(() => {
         router.push("/admin");
@@ -31,8 +31,12 @@ export default function Login() {
 
   return (
     <div className="col-md-6 offset-md-3 mt-5">
-      <div className="card">
-        <Heading className="homeHeading p-3" content="Login" color="black" />
+      <div className="card bg-dark text-light">
+        <Heading
+          className="homeHeading text-light p-3"
+          content="Login"
+          color="black"
+        />
         <div className="card-body">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group">
@@ -61,7 +65,7 @@ export default function Login() {
             </div>
             <button
               disabled={formState.isSubmitting}
-              className="btn btn-primary mt-3"
+              className="btn btn-success w-100 mt-3"
             >
               {formState.isSubmitting && (
                 <span className="spinner-border spinner-border-sm mr-1"></span>

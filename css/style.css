@@ -254,13 +254,16 @@ body {
   font-family: "EB Garamond", serif;
   font-size: 50px;
   position: absolute;
-  top: 20%;
+  top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
   white-space: nowrap;
-  background-color: black;
   padding: 10px;
   border-radius: 10px;
+}
+
+.hover_effect_h1 h1:hover, .hover_effect_h1 .h1:hover {
+  scale: 2;
 }
 
 .child_model {
@@ -271,7 +274,7 @@ body {
 @media (max-width: 1850px) {
   .font_model {
     font-size: 35px;
-    top: 30%;
+    top: 70%;
   }
 }
 @media (max-width: 1400px) {
@@ -316,6 +319,7 @@ body {
 
   .font_model {
     font-size: 20px;
+    top: 70%;
   }
 }
 @media (max-width: 400px) {
@@ -374,6 +378,10 @@ body {
   margin-top: -1px;
 }
 
+/* .product_spec table {
+  max-width: 1500px !important;
+}
+ */
 @media (max-width: 960px) {
   .product_img_container {
     margin: 20px;
@@ -407,8 +415,75 @@ body {
   padding: 10px;
 }
 
-#please table tbody tr {
-  padding: 20px;
+#please P {
+  padding: 10px 20px 10px 20px;
+  max-width: 650px;
+  text-align: left;
+  margin: auto;
+  width: 50%;
+}
+
+#please {
+  display: flex;
+  justify-content: center;
+}
+
+.specification {
+  margin-right: 71px;
+}
+
+.spec-table {
+  width: 646px;
+  font-family: "robotoregular";
+}
+
+.product_spec th {
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+.product_spec tr:nth-child(odd) {
+  background: #313131;
+}
+
+.product_spec td {
+  padding: 5px 8px;
+  font-size: 12px;
+  text-align: start;
+}
+
+.product_spec td:first-child {
+  padding: 10px 8px;
+}
+
+.product-info {
+  background-color: #1e1e1e;
+  padding: 45px 0px 92px 0px;
+}
+
+.spec-table {
+  width: 646px;
+}
+
+.spec-table table {
+  width: 100% !important;
+}
+
+#please tr:nth-child(even) {
+  background-color: #464545;
+}
+
+.product-info tr:nth-child(odd) {
+  background: #313131;
+}
+
+.product-info td {
+  padding: 10px 8px;
+  font-size: 14px;
+}
+
+.product-info td:first-child {
+  padding: 10px 8px;
 }
 
 .this {
@@ -441,6 +516,8 @@ img {
 }
 
 .img-select {
+  margin-left: -4px;
+  padding-left: 0px;
   display: flex;
 }
 
@@ -452,7 +529,8 @@ img {
 
 .img-item {
   margin: 0.3rem;
-  min-width: 100px;
+  max-width: 115px;
+  min-width: 70px;
 }
 
 .img-item:nth-child(1),
@@ -583,6 +661,17 @@ hr {
 
 #go_back button:hover {
   background-color: rgb(202, 135, 9);
+}
+
+.hover_effect_h1 h1:hover, .hover_effect_h1 .h1:hover {
+  border: 5px dotted #a7a7a7;
+  color: #3a7999;
+  background: rgba(192, 187, 187, 0);
+}
+
+.hover_front:hover {
+  border: 5px dotted #a7a7a7;
+  background: rgba(192, 187, 187, 0);
 }
 
 :root {

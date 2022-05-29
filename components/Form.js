@@ -41,9 +41,7 @@ export default function Contact() {
     resolver: yupResolver(schema),
   });
 
-  function onSubmit(data) {
-    console.log(data);
-  }
+  function onSubmit(data) {}
   const [result, showResult] = useState(false);
 
   const form = useRef();
@@ -59,9 +57,7 @@ export default function Contact() {
         "no3-QHO0yu8UYjScf"
       )
       .then(
-        (result) => {
-          console.log(result.text);
-        },
+        (result) => {},
         (error) => {
           console.log(error.text);
         }
