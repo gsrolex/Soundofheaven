@@ -9,10 +9,10 @@ import { BASE_URL_CAT } from "../../api/api";
 import { getNavigationStaticProps } from "../../js/navigationStaticProps";
 import { Col, Row } from "react-bootstrap";
 
-export default function Index({ brands, subcategory }) {
+export default function Index(props) {
   return (
     <div className="bg-dark">
-      <Layout brands={brands}>
+      <Layout brands={props.brands}>
         <Head title="Results" />
         <Heading className="" content="Home" color="black" />
       </Layout>
@@ -23,7 +23,7 @@ export default function Index({ brands, subcategory }) {
               <Heading className="p-3" content=""></Heading>
             </Col>
           </Row>
-          {subcategory.map((sub) => {
+          {props.subcategory.map((sub) => {
             return (
               <>
                 <Link href={`/model/${String(sub.id)}`}>
