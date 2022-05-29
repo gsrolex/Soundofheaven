@@ -46,11 +46,13 @@ export default function UserDetail({ brands, subcategory }) {
               <Col className="text_container p-5 " md={5} lg={4}>
                 {" "}
                 <Link href="/contactus">
-                  <Buttons
-                    className=" btn btn-success btn-lg"
-                    content="Kontakt oss"
-                    color="white"
-                  ></Buttons>
+                  <a>
+                    <Buttons
+                      className=" btn btn-success btn-lg"
+                      content="Kontakt oss"
+                      color="white"
+                    ></Buttons>
+                  </a>
                 </Link>
               </Col>
             </Row>
