@@ -14,7 +14,7 @@ This is a simple website that is made to complete a few simple tasks
 
 ## Built With
 
-- [Next.js]https://nextjs.org/docs/getting-started)
+- [Next.js](https://nextjs.org/docs/getting-started)
 - [React.js](https://reactjs.org/)
 - [yup.js](https://www.npmjs.com/package/yup)
 - [axios.js](https://axios-http.com/docs/intro)
