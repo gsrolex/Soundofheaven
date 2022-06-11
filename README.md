@@ -1,22 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SoundOfHeaven
+
+![image](https://soundof.netlify.app/_ipx/w_750,q_75/https%3A%2F%2Fwww.soundofheaven.nodesign.no%2Fwp-content%2Fuploads%2F2022%2F05%2FFrancoSerblin.jpg?url=https%3A%2F%2Fwww.soundofheaven.nodesign.no%2Fwp-content%2Fuploads%2F2022%2F05%2FFrancoSerblin.jpg&w=750&q=75)
+
+Ecommerce website for high end speaker systems
+
+## Description
+
+This is a simple website that is made to complete a few simple tasks
+
+- Create a feel of exclusivity
+- View products
+- Contact seller for personaly ordering a product and payment
+
+## Built With
+
+- [Next.js]https://nextjs.org/docs/getting-started)
+- [React.js](https://reactjs.org/)
+- [yup.js](https://www.npmjs.com/package/yup)
+- [axios.js](https://axios-http.com/docs/intro)
+- [Bootstrap](https://getbootstrap.com)
+- [React-Bootstrap](https://react-bootstrap.github.io/)
 
 ## Getting Started
 
-First, run the development server:
+### Installing
+
+This is where you list how to get the project started. It typically just includes telling a person to clone the repo and then to install the dependencies e.g.
+
+1. Clone the repo:
+
+```bash
+gh repo clone gsrolex/Soundofheaven
+```
+
+2. Install the dependencies:
+
+```
+npm install
+```
+
+### Running
+
+To run the app, run the following commands:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 ## Learn More
 
@@ -27,8 +60,14 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+If you wish to contribute for this website you can make a pull request so i can reviewe the code. Thanks!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contact
+
+This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
+
+[My Webpage page](https://nodesign.netlify.app/)
+
+[My LinkedIn page](https://www.linkedin.com/in/ammon-sebastian-weggersen-4a474ba0) please
