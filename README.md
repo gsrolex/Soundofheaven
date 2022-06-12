@@ -64,8 +64,6 @@ If you wish to contribute for this website you can make a pull request so i can 
 
 ## Contact
 
-This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
-
 [My Webpage page](https://nodesign.netlify.app/)
 
 [My LinkedIn page](https://www.linkedin.com/in/ammon-sebastian-weggersen-4a474ba0) please
